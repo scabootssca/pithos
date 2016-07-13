@@ -9,13 +9,12 @@ AM_INIT_AUTOMAKE([1.11 dist-xz no-dist-gzip foreign subdir-objects -Wall -Wno-po
 AM_SILENT_RULES([yes])
 AM_PATH_PYTHON([3.4])
 
-GETTEXT_PACKAGE=pithos
-AC_SUBST(GETTEXT_PACKAGE)
+AM_GNU_GETTEXT_VERSION([0.19.7])
+AM_GNU_GETTEXT([external])
 
 m4_ifndef([GLIB_GSETTINGS], [AC_MSG_ERROR([gsettings.m4 not found])])
 m4_ifndef([APPSTREAM_XML], [AC_MSG_ERROR([appstream-xml.m4 not found])])
 
-IT_PROG_INTLTOOL([0.50.0])
 DESKTOP_FILE
 APPSTREAM_XML
 GLIB_GSETTINGS

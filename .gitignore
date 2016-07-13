@@ -21,3 +21,10 @@ stamp-it
 .intltool-merge-cache
 POTFILES
 compile
+/po/Makevars.template
+/po/*~
+/po/*.sed
+/po/*.sin
+/po/*.header
+/po/Rules-quot
+/ABOUT-NLS

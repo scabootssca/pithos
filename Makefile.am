@@ -49,12 +49,18 @@ pithos.gresource: data/io.github.Pithos.gresource.xml $(noinst_DATA)
 
 desktop_in_files = data/io.github.Pithos.desktop.in
 desktop_FILES = $(desktop_in_files:.desktop.in=.desktop)
-@INTLTOOL_DESKTOP_RULE@
+
+%.desktop: %.desktop.in
+	$(AM_V_GEN)$(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
+
 @DESKTOP_FILE_RULES@
 
 appstream_in_files = data/io.github.Pithos.appdata.xml.in
 appstream_XML = $(appstream_in_files:.xml.in=.xml)
-@INTLTOOL_XML_RULE@
+
+%.appdata.xml: %.appdata.xml.in
+	$(AM_V_GEN)$(MSGFMT) --xml --template $< -d $(top_srcdir)/po -o $@
+
 @APPSTREAM_XML_RULES@
 
 hicolor_scalabledir = $(datadir)/icons/hicolor/scalable/apps
