@@ -19,7 +19,7 @@ if help2man.found()
     command: [
       # https://github.com/mesonbuild/meson/issues/266
       'env', 'MESON_SOURCE_ROOT=' + meson.source_root(), 'MESON_BUILD_ROOT=' + meson.build_root(),
-      help2man, '--output=@OUTPUT@', pithos
+      help2man, '--no-info', '--output=@OUTPUT@', pithos
     ]
   )
 endif
